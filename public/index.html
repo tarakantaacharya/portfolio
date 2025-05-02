@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarakanta Acharya | AI/ML Engineer & Backend Developer</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #0a66c2;
+        --secondary-color: #2ecc71;
+        --dark-color: #2c3e50;
+        --light-color: #f9f9f9;
+        --white-color: #ffffff;
+        --gray-color: #95a5a6;
+        --dark-bg: #1a1a1a;
+        --dark-text: #e0e0e0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+        position: relative;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Merriweather", serif;
+        color: var(--dark-color);
+      }
+
+      .bg-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #4a89dc 100%
+        );
+      }
+
+      .text-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #4a89dc 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-section {
+        min-height: 100vh;
+        background-color: var(--white-color);
+        position: relative;
+        overflow: hidden;
+        padding-top: 80px;
+      }
+
+      .hero-section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+      }
+
+      .hero-section .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-section:before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(10, 102, 194, 0.1);
+        z-index: 0;
+        animation: pulse 4s infinite;
+      }
+
+      .hero-section:after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(46, 204, 113, 0.1);
+        z-index: 0;
+        animation: pulse 4s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .section {
+        padding: 80px 0; /* Consistent padding for all sections */
+      }
+
+      .section-title {
+        margin-bottom: 60px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 50px;
+        height: 3px;
+        background: var(--secondary-color);
+        transition: width 0.3s;
+      }
+
+      .section-title:hover:after {
+        width: 100%;
+      }
+
+      .profile-img {
+        border-radius: 50%;
+        border: 5px solid #000; /* Black border in light theme */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        color: var(--white-color);
+        font-size: 18px;
+        margin: 0 5px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .social-icons a::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s, height 0.3s;
+      }
+
+      .social-icons a:hover::after {
+        width: 100px;
+        height: 100px;
+      }
+
+      .social-icons a:hover {
+        transform: translateY(-5px) scale(1.1);
+      }
+
+      .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        height: 100%;
+        background-color: var(--white-color);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-icon {
+        font-size: 48px;
+        color: var(--primary-color);
+        transition: transform 0.3s;
+      }
+
+      .card:hover .card-icon {
+        transform: rotate(360deg);
+      }
+
+      .skill-item {
+        background-color: var(--white-color);
+        border-radius: 30px;
+        padding: 10px 20px;
+        margin: 5px;
+        display: inline-block;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+      }
+
+      .skill-item:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        transform: translateY(-3px);
+      }
+
+      .skill-category {
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline-item {
+        position: relative;
+        border: 2px solid var(--primary-color);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: var(--white-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #6f42c1; /* Purple background */
+        color: var(--white-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+      }
+
+      .timeline-content {
+        flex: 1;
+        padding: 20px;
+        background-color: transparent;
+        border-radius: 15px;
+      }
+
+      .timeline-content h3 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .timeline-content h6 {
+        margin-bottom: 10px;
+        color: #6c757d;
+      }
+
+      /* Customize List items */
+      .timeline-content ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .timeline-content ul li {
+        padding-left: 1.2em;
+        text-indent: -1.2em;
+        position: relative;
+      }
+
+      .timeline-content ul li:before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        font-size: 1.2em;
+      }
+
+      /* Animation delay */
+      .timeline-item[data-aos] {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      /* AOS fade-in */
+      .timeline-item[data-aos="fade-up"] {
+        opacity: 1;
+      }
+
+      .project-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        height: 100%;
+      }
+
+      .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-img {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover .project-img {
+        transform: scale(1.1);
+      }
+
+      .project-tag {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-size: 12px;
+        margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .project-tag:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+      }
+
+      .contact-info i {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-right: 15px;
+        transition: transform 0.3s;
+      }
+
+      .contact-info:hover i {
+        transform: rotate(360deg);
+      }
+
+      .btn-custom {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #4a89dc 100%
+        );
+        color: var(--white-color);
+        border-radius: 30px;
+        padding: 12px 30px;
+        border: none;
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-custom::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s, height 0.3s;
+      }
+
+      .btn-custom:hover::after {
+        width: 200px;
+        height: 200px;
+      }
+
+      .btn-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        color: var(--white-color);
+      }
+
+      .btn-outline-custom {
+        color: var(--primary-color);
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        border-radius: 30px;
+        padding: 10px 28px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-custom:hover {
+        background: var(--primary-color);
+        color: var(--white-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer {
+        background-color: var(--dark-color);
+        color: var(--white-color);
+        padding: 30px 0;
+      }
+
+      .footer hr {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Form Styling */
+      .form-control {
+        border-radius: 10px;
+        transition: all 0.3s;
+        background-color: var(--white-color);
+        color: var(--dark-color);
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 10px rgba(10, 102, 194, 0.2);
+        transform: scale(1.02);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 767.98px) {
+        .hero-section {
+          text-align: center;
+        }
+
+        .profile-img {
+          margin-bottom: 30px;
+          width: 300px;
+          height: 300px;
+        }
+
+        .hero-section {
+          background-attachment: scroll;
+        }
+
+        .timeline-item {
+          max-width: 100%;
+          padding: 0 15px;
+        }
+      }
+
+      .navbar {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .nav-link {
+        color: var(--dark-color);
+        font-weight: 500;
+        margin: 0 10px;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-link.active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .scroll-to-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        background: var(--primary-color);
+        color: var(--white-color);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .scroll-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-to-top:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home"
+          >Tarakanta<span class="text-gradient">.</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section d-flex align-items-center"
+      data-aos="fade-in"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-md-5 text-center"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <img
+              src="profile.png"
+              alt="Tarakanta Acharya"
+              class="profile-img mb-4"
+              loading="lazy"
+            />
+          </div>
+          <div class="col-md-7" data-aos="fade-right" data-aos-delay="400">
+            <h1 class="display-4 fw-bold mb-3">
+              Hi, I'm <span class="text-gradient">Tarakanta Acharya</span>
+            </h1>
+            <h3 class="mb-4">AI/ML Engineer & Backend Developer</h3>
+            <p class="lead mb-4">
+              Passionate about designing scalable backend systems and
+              integrating machine learning models into production. Expertise in
+              building REST APIs, working with cloud platforms, and developing
+              intelligent AI solutions.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#contact" class="btn btn-custom">Contact Me</a>
+              <a href="#projects" class="btn btn-outline-custom"
+                >View My Work</a
+              >
+            </div>
+            <div class="mt-4 social-icons">
+              <a
+                href="https://linkedin.com/in/tarakanta-acharya"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://github.com/tarakanta"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://kaggle.com/tarakantaacharya"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-kaggle"></i
+              ></a>
+              <a
+                href="mailto:acharyatarakanta2002@gmail.com"
+                class="bg-gradient"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">About Me</h2>
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <h3 class="mb-3">👋 Who Am I?</h3>
+            <p class="lead mb-3">
+              I'm a passionate <strong>AI/ML Engineer</strong> and
+              <strong>Backend Developer</strong> experienced in designing
+              scalable systems and integrating machine learning models into
+              production.
+            </p>
+            <p>
+              I specialize in building high-performance REST APIs, cloud-native
+              applications, and intelligent AI solutions tailored to solve
+              real-world problems.
+            </p>
+            <p>
+              I'm currently pursuing my Bachelor's in
+              <strong>Computer Science & Engineering</strong> with a
+              specialization in AI & ML. I'm always eager to explore and apply
+              new technologies.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="400">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                  <div class="card-icon mb-3 text-primary fs-1">
+                    <i class="fas fa-server"></i>
+                  </div>
+                  <h5 class="fw-bold">Backend Development</h5>
+                  <p class="text-muted small">
+                    Building scalable and efficient server-side apps with modern
+                    frameworks.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                  <div class="card-icon mb-3 text-success fs-1">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <h5 class="fw-bold">AI & Machine Learning</h5>
+                  <p class="text-muted small">
+                    Creating intelligent systems using modern ML & deep learning
+                    techniques.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                  <div class="card-icon mb-3 text-info fs-1">
+                    <i class="fas fa-cloud"></i>
+                  </div>
+                  <h5 class="fw-bold">Cloud Computing</h5>
+                  <p class="text-muted small">
+                    Deploying and managing systems on AWS, GCP, and other cloud
+                    platforms.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                  <div class="card-icon mb-3 text-warning fs-1">
+                    <i class="fas fa-database"></i>
+                  </div>
+                  <h5 class="fw-bold">Database Management</h5>
+                  <p class="text-muted small">
+                    Managing structured and unstructured data using SQL & NoSQL
+                    systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">My Skills</h2>
+        <div class="card p-4 shadow border-0">
+          <div class="row gy-4">
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-code me-2 text-primary"></i>Programming
+                Languages
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-primary-subtle text-primary">Python</span>
+                <span class="badge bg-primary-subtle text-primary">C++</span>
+                <span class="badge bg-primary-subtle text-primary">Java</span>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-cogs me-2 text-success"></i>Backend Development
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success-subtle text-success"
+                  >Spring Boot</span
+                >
+                <span class="badge bg-success-subtle text-success">Flask</span>
+                <span class="badge bg-success-subtle text-success"
+                  >FastAPI</span
+                >
+                <span class="badge bg-success-subtle text-success"
+                  >Express.js</span
+                >
+                <span class="badge bg-success-subtle text-success"
+                  >Node.js</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-database me-2 text-primary"></i>Databases
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-info text-dark">MySQL</span>
+                <span class="badge bg-info text-dark">PostgreSQL</span>
+                <span class="badge bg-info text-dark">MongoDB</span>
+                <span class="badge bg-info text-dark">Redis</span>
+                <span class="badge bg-info text-dark">Firebase</span>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-plug me-2 text-info"></i>API Development
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-info-subtle text-info">RESTful APIs</span>
+                <span class="badge bg-info-subtle text-info">GraphQL</span>
+                <span class="badge bg-info-subtle text-info">gRPC</span>
+                <span class="badge bg-info-subtle text-info"
+                  >JWT Authentication</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-cloud me-2 text-primary"></i>Cloud Platforms
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-primary-subtle text-primary"
+                  >Google Cloud</span
+                >
+                <span class="badge bg-primary-subtle text-primary">AWS</span>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-tools me-2 text-secondary"></i>DevOps Tools
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-secondary-subtle text-secondary"
+                  >Docker</span
+                >
+                <span class="badge bg-secondary-subtle text-secondary"
+                  >Kubernetes</span
+                >
+                <span class="badge bg-secondary-subtle text-secondary"
+                  >CI/CD (GitHub Actions)</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-robot me-2 text-danger"></i>Machine Learning
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-danger-subtle text-danger"
+                  >TensorFlow</span
+                >
+                <span class="badge bg-danger-subtle text-danger">PyTorch</span>
+                <span class="badge bg-danger-subtle text-danger"
+                  >Scikit-Learn</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-globe me-2 text-success"></i>Web Development
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success-subtle text-success"
+                  >React.js</span
+                >
+                <span class="badge bg-success-subtle text-success">HTML</span>
+                <span class="badge bg-success-subtle text-success">CSS</span>
+                <span class="badge bg-success-subtle text-success"
+                  >JavaScript</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-lg-4"
+              data-aos="fade-up"
+              data-aos-delay="900"
+            >
+              <h5 class="mb-2">
+                <i class="fas fa-code-branch me-2 text-dark"></i>Version Control
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-dark-subtle text-dark">Git</span>
+                <span class="badge bg-dark-subtle text-dark">GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Experience</h2>
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>Google AI-ML Virtual Internship</h3>
+              <h6 class="text-muted mb-3">Apr - June 2024</h6>
+              <ul>
+                <li>Built an end-to-end machine learning API using FastAPI.</li>
+                <li>
+                  Designed a MongoDB database schema for storing AI-generated
+                  predictions.
+                </li>
+                <li>
+                  Implemented asynchronous API endpoints for real-time ML
+                  inference.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>Google Generative AI Virtual Internship</h3>
+              <h6 class="text-muted mb-3">July - Sept 2024</h6>
+              <ul>
+                <li>
+                  Developed a Flask-based backend for AI-generated content
+                  services.
+                </li>
+                <li>
+                  Created API endpoints to serve AI-generated text and images
+                  using LangServe.
+                </li>
+                <li>
+                  Integrated a Redis caching system to enhance response time.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>Java Full Stack Development Internship</h3>
+              <h6 class="text-muted mb-3">Nov - Dec 2024</h6>
+              <ul>
+                <li>
+                  Developed Spring Boot-based backend services for an e-commerce
+                  platform.
+                </li>
+                <li>
+                  Designed REST APIs for authentication, product management, and
+                  order processing.
+                </li>
+                <li>
+                  Implemented JWT-based authentication and OAuth 2.0 security.
+                </li>
+                <li>
+                  Optimized SQL queries and indexing for performance
+                  improvement.
+                </li>
+                <li>
+                  Deployed backend services on Google Cloud (App Engine, Cloud
+                  Run).
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="timeline-content">
+              <h3>AWS Data Engineering</h3>
+              <h6 class="text-muted mb-3">Apr - June 2025</h6>
+              <ul>
+                <li>
+                  Developed a scalable data pipeline using AWS Glue, Lambda, and
+                  S3.
+                </li>
+                <li>
+                  Processed and transformed large datasets for analytics using
+                  AWS Athena and Redshift.
+                </li>
+                <li>
+                  Integrated event-driven architecture with Amazon Kinesis for
+                  real-time data ingestion.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card card h-100">
+              <img
+                src="https://leaprobots.com/wp-content/uploads/2022/11/ChatBot-1280x731.jpg"
+                alt="AI-Powered Chatbot"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4>AI-Powered Chatbot for College Data Retrieval</h4>
+                <div class="mb-3">
+                  <span class="project-tag">Flask</span>
+                  <span class="project-tag">ChromaDB</span>
+                  <span class="project-tag">Google Cloud</span>
+                </div>
+                <p>
+                  Developed a Flask-based backend for document retrieval with
+                  ChromaDB for vector-based search queries and deployed on
+                  Google Cloud with auto-scaling.
+                </p>
+                <a href="#" class="btn btn-sm btn-outline-custom"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card card h-100">
+              <img
+                src="https://user-images.githubusercontent.com/85941909/206445361-cc1ad514-bd82-4502-a1be-42b84c56228a.png"
+                alt="Restaurant Search System"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4>Restaurant Search System</h4>
+                <div class="mb-3">
+                  <span class="project-tag">FastAPI</span>
+                  <span class="project-tag">SQLAlchemy</span>
+                  <span class="project-tag">PostGIS</span>
+                </div>
+                <p>
+                  Designed a FastAPI-based backend for restaurant search with
+                  SQLAlchemy models for efficient data querying and integrated
+                  geolocation search using PostGIS.
+                </p>
+                <a href="https://github.com/tarakantaacharya/Restaurant-Finder-app" class="btn btn-sm btn-outline-custom"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card card h-100">
+              <img
+                src="https://pub.mdpi-res.com/jpm/jpm-12-00680/article_deploy/html/images/jpm-12-00680-g002.png?1650800912"
+                alt="X-ray Disease Classification"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4>X-ray Disease Classification</h4>
+                <div class="mb-3">
+                  <span class="project-tag">Flask</span>
+                  <span class="project-tag">AI/ML</span>
+                  <span class="project-tag">REST API</span>
+                </div>
+                <p>
+                  Built a Flask REST API to serve AI predictions for chest X-ray
+                  images with async processing for faster inference.
+                </p>
+                <a href="https://github.com/tarakantaacharya/xray-disease-predictor" class="btn btn-sm btn-outline-custom"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-card card h-100">
+              <img
+                src="https://simplybook.me/build/images/main-page/more-bookings-carousel/events/preview-simply-simplysite.181ca3f6.png"
+                alt="Scalable Event Booking System"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4>Scalable Event Booking System</h4>
+                <div class="mb-3">
+                  <span class="project-tag">Spring Boot</span>
+                  <span class="project-tag">RabbitMQ</span>
+                  <span class="project-tag">Redis</span>
+                </div>
+                <p>
+                  Developed a Spring Boot microservices architecture with
+                  RabbitMQ message queues for event notifications and Redis
+                  caching to improve system performance.
+                </p>
+                <a href="#" class="btn btn-sm btn-outline-custom"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-card card h-100">
+              <img
+                src="https://appscribed.com/wp-content/uploads/2024/04/text2sql-review-home.png"
+                alt="Fine-Tuned Text2SQL System"
+                class="project-img"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h4>Fine-Tuned Text2SQL System</h4>
+                <div class="mb-3">
+                  <span class="project-tag">Phi-2</span>
+                  <span class="project-tag">LoRA</span>
+                  <span class="project-tag">PEFT</span>
+                  <span class="project-tag">NSText2SQL</span>
+                </div>
+                <p>
+                  Built and fine-tuned a lightweight Text2SQL model using Phi-2
+                  with LoRA-based PEFT on the NSText2SQL dataset. Achieved SQL
+                  query generation from natural language inputs with high
+                  accuracy using resource-efficient methods.
+                </p>
+                <a href="https://github.com/tarakantaacharya/phi2_text2sql_finetuned" class="btn btn-sm btn-outline-custom"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="card p-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="row">
+            <div class="col-md-2 text-center mb-3 mb-md-0">
+              <div class="display-4 text-gradient">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+              <h5>Gayatri Vidya Parishad College of Engineering (Autonomous), Visakhapatnam</h5>
+              <p class="text-muted">2022 – Present (Final Year)</p>
+              <ul>
+                <li>Specialization in Artificial Intelligence & Machine Learning</li>
+                <li>Current CGPA: 9.22 / 10.0</li>
+              </ul>
+            </div>
+          </div>
+        </div>        
+        <h2 class="section-title mt-5">Certifications</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4>TensorFlow Developer Certificate</h4>
+                <p class="text-muted">Udemy</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4>Artificial Intelligence Certificate</h4>
+                <p class="text-muted">Udemy</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4>Java Programming Certificate</h4>
+                <p class="text-muted">Edex</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4>Generative AI Certificate</h4>
+                <p class="text-muted">Coursera</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coding Platforms Section -->
+    <section class="section bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Coding Profiles</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100">
+              <div class="card-body d-flex align-items-center">
+                <div class="me-4 text-center" style="width: 60px">
+                  <i
+                    class="fas fa-code text-gradient"
+                    style="font-size: 40px"
+                  ></i>
+                </div>
+                <div>
+                  <h4>CodeChef</h4>
+                  <a
+                    href="https://www.codechef.com/users/achrytarakanta"
+                    target="_blank"
+                    class="btn btn-sm btn-outline-custom mt-2"
+                    >View Profile</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100">
+              <div class="card-body d-flex align-items-center">
+                <div class="me-4 text-center" style="width: 60px">
+                  <i
+                    class="fas fa-laptop-code text-gradient"
+                    style="font-size: 40px"
+                  ></i>
+                </div>
+                <div>
+                  <h4>Codeforces</h4>
+                  <a
+                    href="https://codeforces.com/profile/acharyatarakanta"
+                    target="_blank"
+                    class="btn btn-sm btn-outline-custom mt-2"
+                    >View Profile</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100">
+              <div class="card-body d-flex align-items-center">
+                <div class="me-4 text-center" style="width: 60px">
+                  <i
+                    class="fas fa-laptop-code text-gradient"
+                    style="font-size: 40px"
+                  ></i>
+                </div>
+                <div>
+                  <h4>LeetCode</h4>
+                  <a
+                    href="https://leetcode.com/u/acharyatarakanta/"
+                    target="_blank"
+                    class="btn btn-sm btn-outline-custom mt-2"
+                    >View Profile</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="row">
+          <div
+            class="col-lg-6 mb-4 mb-lg-0"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div class="card p-4">
+              <div class="contact-info d-flex align-items-center">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h5 class="mb-0">Phone</h5>
+                  <p class="mb-0">+91 6281887981</p>
+                </div>
+              </div>
+              <hr />
+              <div class="contact-info d-flex align-items-center">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h5 class="mb-0">Email</h5>
+                  <p class="mb-0">acharyatarakanta2002@gmail.com</p>
+                </div>
+              </div>
+              <hr />
+              <div class="contact-info d-flex align-items-center">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                  <h5 class="mb-0">LinkedIn</h5>
+                  <p class="mb-0">https://www.linkedin.com/in/tarakantaacharya</p>
+                </div>
+              </div>
+              <hr />
+              <div class="contact-info d-flex align-items-center">
+                <i class="fab fa-github"></i>
+                <div>
+                  <h5 class="mb-0">GitHub</h5>
+                  <p class="mb-0">https://github.com/tarakantaacharya</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="card p-4">
+              <form onsubmit="sendEmail(event)">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Your Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    placeholder="Enter subject"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    placeholder="Enter your message"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <h4 style="color:white">Tarakanta Acharya</h4>
+            <p class="mb-0">AI/ML Engineer & Backend Developer</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="social-icons">
+              <a
+                href="https://www.linkedin.com/in/tarakantaacharya"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://github.com/tarakantaacharya"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://kaggle.com/tarakantaacharya"
+                target="_blank"
+                class="bg-gradient"
+                ><i class="fab fa-kaggle"></i
+              ></a>
+              <a
+                href="mailto:acharyatarakanta2002@gmail.com"
+                class="bg-gradient"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr
+          class="mt-4 mb-4"
+          style="background-color: rgba(255, 255, 255, 0.1)"
+        />
+        <div class="text-center">
+          <p class="mb-0">© 2025 Tarakanta Acharya. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <a href="#home" class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Scroll to top button
+      const scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add("active");
+        } else {
+          scrollToTopBtn.classList.remove("active");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Active navigation highlighting
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Form Submission
+      function sendEmail(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !subject || !message) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        const toEmail = "acharyatarakanta2002@gmail.com";
+        const mailSubject = encodeURIComponent(subject);
+        const mailBody = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+        const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmail}&su=${mailSubject}&body=${mailBody}`;
+        window.open(gmailURL, "_blank");
+      }
+    </script>
+  </body>
+</html>
